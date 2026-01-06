@@ -1,5 +1,12 @@
 #include <stdio.h>
 
+// INFO: adding example
+int add_pointiers(int *a, int *b) { return *a + *b; }
+
+// INFO: substract example
+int sub_pointiers(int *a, int *b) { return *a - *b; }
+
+// INFO: example bubble sort wih pointiers
 void bubbleSortPoint(int *tab) {
   for (int *p = tab; p < tab + 5; p++) {
     for (int *q = tab; q < tab + 5 - (p - tab); q++) {
@@ -50,6 +57,23 @@ int main() {
   printf("%p\n", odejmowanie);  // WARNING: adres 3 elementu tablicy
   printf("%d\n", *odejmowanie); // WARNING: wartosc 3 elementu tablicy
 
+  printf("\n");
+
+  // INFO: funkcje odejmowania wartosci wskaznikow
+  printf("Funkcje dodawania i odejmowania\n");
+  int wynik = 0;
+
+  wynik = add_pointiers(
+      p_tab, p_tab + 1); // INFO: dodanie pierwszego i dugiego elem. tablicy
+
+  printf("%d\n", wynik); // WARNING: 30
+
+  wynik = sub_pointiers(p_tab, p_tab + 3);
+
+  printf("%d\n", wynik); // WARNING: -30
+
+  printf("\n");
+
   // INFO: miejsce w pamieci
   printf("%p\n", p_tab);
 
@@ -66,6 +90,9 @@ int main() {
       printf("False\n");
     }
   }
+
+  printf("\n");
+  printf("\nSortowanie bąbelkowe za pomocą wskaźników:\n");
 
   int tab_b[] = {33, 20, 10, 45, 12, 60};
   bubbleSortPoint(tab_b);
