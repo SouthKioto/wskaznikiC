@@ -1,4 +1,3 @@
-
-***Prosta implementacja wskaznikow w C
+#Prosta implementacja wskaznikow w C
 
 
