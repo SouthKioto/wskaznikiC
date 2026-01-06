@@ -8,11 +8,9 @@ git clone https://github.com/SouthKioto/wskaznikiC
 ```bash 
 make main
 ```
-```
 
-```bash
-  ./main
+```bash 
+./main
 ```
 ```
 ```
-
