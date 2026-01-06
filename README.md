@@ -12,5 +12,3 @@ make main
 ```bash 
 ./main
 ```
-```
-```
