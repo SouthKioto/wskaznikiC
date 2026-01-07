@@ -1,12 +1,18 @@
 #include <stdio.h>
 
-// INFO: adding example
+// NOTE: adding example
 int add_pointiers(int *a, int *b) { return *a + *b; }
 
-// INFO: substract example
+// NOTE: substract example
 int sub_pointiers(int *a, int *b) { return *a - *b; }
 
-// INFO: example bubble sort wih pointiers
+// NOTE: multi example
+int mulit_pointiers(int *a, int *b) { return *a * *b; }
+
+// NOTE: div example
+int div_example(int *a, int *b) { return *a / *b; };
+
+// NOTE: example bubble sort wih pointiers
 void bubbleSortPoint(int *tab) {
   for (int *p = tab; p < tab + 5; p++) {
     for (int *q = tab; q < tab + 5 - (p - tab); q++) {
@@ -65,22 +71,49 @@ int main() {
 
   wynik = add_pointiers(
       p_tab, p_tab + 1); // INFO: dodanie pierwszego i dugiego elem. tablicy
-
-  printf("%d\n", wynik); // WARNING: 30
+  printf("%d\n", wynik);
 
   wynik = sub_pointiers(p_tab, p_tab + 3);
+  printf("%d\n", wynik);
 
-  printf("%d\n", wynik); // WARNING: -30
+  wynik = mulit_pointiers(p_tab, p_tab + 2);
+  printf("%d\n", wynik);
+
+  wynik = div_example(p_tab, p_tab + 2);
+  printf("%d\n", wynik);
+
+  printf("\n");
+
+  // INFO: dekrementacja i ikrementacja wskaznikow
+
+  printf("Dekrementacja i ikremenracja wskaznikow");
+
+  int example[] = {10, 20, 30, 40};
+  p = example;
+
+  printf("%d\n", *p);
+  p++;
+  printf("%d\n", *p);
+  p--;
+  printf("%d\n", *p);
+  p += 2;
+  printf("%d\n", *p);
 
   printf("\n");
 
   // INFO: miejsce w pamieci
+  printf("Miejsce w pamieci: \n");
   printf("%p\n", p_tab);
 
   // INFO: wartosc pod wskaznikiem (pierwszy element tablicy)
+
+  printf("Wartosc pod wskaznikiem (index:1): \n");
   printf("%d\n", *p_tab);
 
   // INFO: wyswietlanie elementow tablicy za pomoca wskaznika
+  printf("Wyświetlenie elementów tablicy za pomocą wskaznika\n");
+  printf("i sprawdzanie czy liczba znajduje sie w tablicy: \n");
+
   for (p_tab = tablica; p_tab < tablica + 6; p_tab++) {
     printf("%d: ", *p_tab);
 
